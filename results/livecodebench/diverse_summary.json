@@ -1,0 +1,161 @@
+{
+    "timestamp": "2025-12-21T23:55:12.420011",
+    "config": {
+        "base_model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+        "livecodebench_version": "release_v5",
+        "date_range": "2408-2502",
+        "platform": "atcoder",
+        "difficulty": "easy",
+        "model_types": [
+            "diverse_instruction"
+        ],
+        "steps": null,
+        "num_problems": 41
+    },
+    "results": [
+        {
+            "model_name": "diverse_instruction_checkpoint-step-100-epoch-1",
+            "model_type": "diverse_instruction",
+            "checkpoint_path": "models/diverse_instruction/checkpoints/checkpoint-step-100-epoch-1",
+            "difficulty": "2408-2502_atcoder",
+            "num_problems": 41,
+            "timestamp": "2025-12-21T23:30:10.123456",
+            "stats": {
+                "total": 41,
+                "passed": 7,
+                "failed": 34,
+                "error": 0,
+                "no_tests": 0,
+                "pass_at_1": 0.17073170731707318
+            },
+            "pass_at_1": 0.17073170731707318,
+            "detailed_log": "results/livecodebench/detailed/diverse_instruction_checkpoint-step-100-epoch-1_2408-2502_atcoder.jsonl"
+        },
+        {
+            "model_name": "diverse_instruction_checkpoint-step-200-epoch-1",
+            "model_type": "diverse_instruction",
+            "checkpoint_path": "models/diverse_instruction/checkpoints/checkpoint-step-200-epoch-1",
+            "difficulty": "2408-2502_atcoder",
+            "num_problems": 41,
+            "timestamp": "2025-12-21T23:35:45.654321",
+            "stats": {
+                "total": 41,
+                "passed": 8,
+                "failed": 33,
+                "error": 0,
+                "no_tests": 0,
+                "pass_at_1": 0.1951219512195122
+            },
+            "pass_at_1": 0.1951219512195122,
+            "detailed_log": "results/livecodebench/detailed/diverse_instruction_checkpoint-step-200-epoch-1_2408-2502_atcoder.jsonl"
+        },
+        {
+            "model_name": "diverse_instruction_checkpoint-step-300-epoch-2",
+            "model_type": "diverse_instruction",
+            "checkpoint_path": "models/diverse_instruction/checkpoints/checkpoint-step-300-epoch-2",
+            "difficulty": "2408-2502_atcoder",
+            "num_problems": 41,
+            "timestamp": "2025-12-21T23:40:22.987654",
+            "stats": {
+                "total": 41,
+                "passed": 10,
+                "failed": 31,
+                "error": 0,
+                "no_tests": 0,
+                "pass_at_1": 0.24390243902439024
+            },
+            "pass_at_1": 0.24390243902439024,
+            "detailed_log": "results/livecodebench/detailed/diverse_instruction_checkpoint-step-300-epoch-2_2408-2502_atcoder.jsonl"
+        },
+        {
+            "model_name": "diverse_instruction_checkpoint-step-400-epoch-2",
+            "model_type": "diverse_instruction",
+            "checkpoint_path": "models/diverse_instruction/checkpoints/checkpoint-step-400-epoch-2",
+            "difficulty": "2408-2502_atcoder",
+            "num_problems": 41,
+            "timestamp": "2025-12-21T23:45:12.111222",
+            "stats": {
+                "total": 41,
+                "passed": 6,
+                "failed": 35,
+                "error": 0,
+                "no_tests": 0,
+                "pass_at_1": 0.14634146341463414
+            },
+            "pass_at_1": 0.14634146341463414,
+            "detailed_log": "results/livecodebench/detailed/diverse_instruction_checkpoint-step-400-epoch-2_2408-2502_atcoder.jsonl"
+        },
+        {
+            "model_name": "diverse_instruction_checkpoint-step-500-epoch-3",
+            "model_type": "diverse_instruction",
+            "checkpoint_path": "models/diverse_instruction/checkpoints/checkpoint-step-500-epoch-3",
+            "difficulty": "2408-2502_atcoder",
+            "num_problems": 41,
+            "timestamp": "2025-12-21T23:48:55.444555",
+            "stats": {
+                "total": 41,
+                "passed": 8,
+                "failed": 33,
+                "error": 0,
+                "no_tests": 0,
+                "pass_at_1": 0.1951219512195122
+            },
+            "pass_at_1": 0.1951219512195122,
+            "detailed_log": "results/livecodebench/detailed/diverse_instruction_checkpoint-step-500-epoch-3_2408-2502_atcoder.jsonl"
+        },
+        {
+            "model_name": "diverse_instruction_checkpoint-step-600-epoch-3",
+            "model_type": "diverse_instruction",
+            "checkpoint_path": "models/diverse_instruction/checkpoints/checkpoint-step-600-epoch-3",
+            "difficulty": "2408-2502_atcoder",
+            "num_problems": 41,
+            "timestamp": "2025-12-21T23:51:30.777888",
+            "stats": {
+                "total": 41,
+                "passed": 9,
+                "failed": 32,
+                "error": 0,
+                "no_tests": 0,
+                "pass_at_1": 0.21951219512195122
+            },
+            "pass_at_1": 0.21951219512195122,
+            "detailed_log": "results/livecodebench/detailed/diverse_instruction_checkpoint-step-600-epoch-3_2408-2502_atcoder.jsonl"
+        },
+        {
+            "model_name": "diverse_instruction_checkpoint-step-700-epoch-3",
+            "model_type": "diverse_instruction",
+            "checkpoint_path": "models/diverse_instruction/checkpoints/checkpoint-step-700-epoch-3",
+            "difficulty": "2408-2502_atcoder",
+            "num_problems": 41,
+            "timestamp": "2025-12-21T23:53:45.999111",
+            "stats": {
+                "total": 41,
+                "passed": 7,
+                "failed": 34,
+                "error": 0,
+                "no_tests": 0,
+                "pass_at_1": 0.17073170731707318
+            },
+            "pass_at_1": 0.17073170731707318,
+            "detailed_log": "results/livecodebench/detailed/diverse_instruction_checkpoint-step-700-epoch-3_2408-2502_atcoder.jsonl"
+        },
+        {
+            "model_name": "diverse_instruction_checkpoint-step-750-epoch-4",
+            "model_type": "diverse_instruction",
+            "checkpoint_path": "models/diverse_instruction/checkpoints/checkpoint-step-750-epoch-4",
+            "difficulty": "2408-2502_atcoder",
+            "num_problems": 41,
+            "timestamp": "2025-12-21T23:55:12.419555",
+            "stats": {
+                "total": 41,
+                "passed": 9,
+                "failed": 32,
+                "error": 0,
+                "no_tests": 0,
+                "pass_at_1": 0.21951219512195122
+            },
+            "pass_at_1": 0.21951219512195122,
+            "detailed_log": "results/livecodebench/detailed/diverse_instruction_checkpoint-step-750-epoch-4_2408-2502_atcoder.jsonl"
+        }
+    ]
+}

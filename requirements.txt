@@ -1,0 +1,10 @@
+unsloth
+bitsandbytes
+accelerate
+peft
+trl
+transformers
+datasets
+matplotlib
+torch
+xformers

@@ -1,0 +1,248 @@
+[
+  {
+    "question_id": "abc301_a",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().splitlines()\n    n = int(data[0])\n    s = data[1].strip()\n    \n    takahashi_count = s.count('T')\n    aoki_count = s.count('A')\n    \n    if takahashi_count > aoki_count:\n        print('T')\n    elif takahashi_count < aoki_count:\n        print('A')\n    else:\n        if n % 2 == 1:\n            print('T')\n        else:\n            print('A')\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc301_b",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().split()\n    n = int(data[0])\n    arr = list(map(int, data[1:1+n]))\n    \n    while True:\n        # Check if we can stop early\n        found = False\n        for i in range(n - 1):\n            diff = abs(arr[i] - arr[i + 1])\n            if diff == 1:\n                continue\n                \n            # Find the closest neighbors\n            left = max(1, arr[i] - 1)\n            right = min(100, arr[i] + 1)\n            \n            # Check if there's a neighbor with correct difference\n            for j in range(left, right + 1):\n                if abs(j - arr[i]) == 1 and abs(j - arr[i + 1]) == diff:\n                    # Perform insertion\n                    new_arr = [0] * (n + diff - 1)\n                    new_arr[:i] = arr[:i]\n                    new_arr[i:i + diff] = list(range(j, j + diff))\n                    new_arr[i + diff:] = arr[i + 1:]\n                    arr = new_arr\n                    found = True\n                    break\n            if found:\n                break\n        \n        if not found:\n            break\n    \n    print(' '.join(map(str, arr)))\n\nif __name__ == '__main__':\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc302_a",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().split()\n    A = int(data[0])\n    B = int(data[1])\n    \n    if B == 0:\n        print(0)\n        return\n    \n    # Calculate ceil(A/B) using floating-point division\n    result = (A + B - 1) // B\n    \n    print(result)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc303_b",
+    "code_list": [
+      "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    n = int(data[0])\n    m = int(data[1])\n    \n    # Create list of lists for all photos\n    photos = []\n    index = 2\n    for i in range(m):\n        row = list(map(int, data[index:index+n]))\n        index += n\n        photos.append(row)\n    \n    # Count frequency of each number\n    freq = [0] * (n + 1)\n    for photo in photos:\n        for num in photo:\n            freq[num] += 1\n    \n    # Count pairs with at least one occurrence\n    count = 0\n    for num in range(1, n + 1):\n        if freq[num] > 0:\n            count += freq[num]\n    \n    print(count)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc303_a",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().splitlines()\n    n = int(data[0])\n    S = list(data[1])\n    T = list(data[2])\n    \n    for i in range(n):\n        if S[i] != T[i]:\n            if S[i] == '1' or S[i] == 'o':\n                if T[i] != '1' and T[i] != 'o':\n                    break\n            elif S[i] == '0' or S[i] == 'l':\n                if T[i] != '0' and T[i] != 'l':\n                    break\n    else:\n        print(\"Yes\")\n        return\n        \n    print(\"No\")\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc304_a",
+    "code_list": [
+      "import sys\n\ndef main():\n    data = sys.stdin.read().splitlines()\n    n = int(data[0])\n    \n    # Create dictionary mapping age to list of (name, index)\n    age_dict = {}\n    for i in range(1, n + 1):\n        parts = data[i].split()\n        name = parts[0]\n        age = int(parts[1])\n        if age not in age_dict:\n            age_dict[age] = []\n        age_dict[age].append((name, i))\n    \n    # Sort by age in descending order\n    sorted_ages = sorted(age_dict.keys(), reverse=True)\n    \n    # Process each age group\n    for age in sorted_ages:\n        names = age_dict[age]\n        \n        # Find the smallest index that hasn't been assigned yet\n        min_index = float('inf')\n        for name, idx in names:\n            if idx < min_index:\n                min_index = idx\n        \n        # Assign the name to the smallest index\n        for name, idx in names:\n            if idx == min_index:\n                print(name)\n                break\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc304_b",
+    "code_list": [
+      "def main():\n    N = int(input().strip())\n    \n    if N <= 10**3 - 1:\n        print(N)\n    elif N < 10**4 - 1:\n        print(int(str(N)[:-1]))\n    elif N < 10**5 - 1:\n        print(int(str(N)[:-2] + '0'))\n    elif N < 10**6 - 1:\n        print(int(str(N)[:-3] + '00'))\n    elif N < 10**7 - 1:\n        print(int(str(N)[:-4] + '000'))\n    elif N < 10**8 - 1:\n        print(int(str(N)[:-5] + '0000'))\n    else:  # N >= 10**8\n        print(int(str(N)[:-6] + '00000'))        \n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc305_a",
+    "code_list": [
+      "def main():\n    N = int(input().strip())\n    \n    # Calculate positions of all stations\n    stations = [i * 5 for i in range(22)]\n    \n    # Find minimum distance to any station\n    min_distance = float('inf')\n    for pos in stations:\n        if abs(pos - N) < min_distance:\n            min_distance = abs(pos - N)\n    \n    print(min_distance)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc305_b",
+    "code_list": [
+      "def main():\n    p, q = input().strip()\n    \n    if p == 'A':\n        idx_p = 0\n    elif p == 'B':\n        idx_p = 1\n    elif p == 'C':\n        idx_p = 2\n    elif p == 'D':\n        idx_p = 3\n    elif p == 'E':\n        idx_p = 4\n    elif p == 'F':\n        idx_p = 5\n    else:  # p == 'G'\n        idx_p = 6\n    \n    if q == 'A':\n        idx_q = 0\n    elif q == 'B':\n        idx_q = 1\n    elif q == 'C':\n        idx_q = 2\n    elif q == 'D':\n        idx_q = 3\n    elif q == 'E':\n        idx_q = 4\n    elif q == 'F':\n        idx_q = 5\n    else:  # q == 'G'\n        idx_q = 6\n    \n    distance = abs(idx_p - idx_q)\n    print(distance)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc306_a",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().splitlines()\n    N = int(data[0])\n    S = data[1].strip()\n    \n    result = S * 2\n    print(result)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc306_b",
+    "code_list": [
+      "def main():\n    binary_str = input().strip()\n    result = 0\n    \n    for i, bit in enumerate(binary_str):\n        if bit == '1':\n            result += (1 << i)\n    \n    print(result)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc307_a",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().split()\n    \n    n = int(data[0])\n    steps = list(map(int, data[1:1+7*n]))\n    \n    total_steps = [sum(steps[i:i+7]) for i in range(0, 7*n, 7)]\n    \n    print(' '.join(map(str, total_steps)))\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc307_b",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().splitlines()\n    \n    n = int(data[0])\n    strings = []\n    for i in range(1, n + 1):\n        strings.append(data[i].strip())\n    \n    # Check all pairs (i, j) with i < j\n    for i in range(n):\n        for j in range(i + 1, n):\n            s1 = strings[i]\n            s2 = strings[j]\n            \n            # Concatenate in both orders\n            concat1 = s1 + s2\n            concat2 = s2 + s1\n            \n            # Check if either is a palindrome\n            if concat1 == concat1[::-1] or concat2 == concat2[::-1]:\n                print(\"Yes\")\n                return\n    \n    print(\"No\")\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc308_a",
+    "code_list": [
+      "def main():\n    S = list(map(int, input().split()))\n    \n    # Check first condition: non-decreasing order\n    for i in range(1, 8):\n        if S[i] < S[i-1]:\n            print(\"No\")\n            return\n    \n    # Check second condition: all between 100 and 675\n    for num in S:\n        if not (100 <= num <= 675):\n            print(\"No\")\n            return\n    \n    # Check third condition: all multiples of 25\n    for num in S:\n        if num % 25 != 0:\n            print(\"No\")\n            return\n    \n    print(\"Yes\")\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc308_b",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().splitlines()\n    \n    # Parse first line: N, M\n    N, M = map(int, data[0].split())\n    \n    # Parse second line: colors of N plates\n    colors = []\n    for i in range(1, 1 + N):\n        colors.append(data[i])\n    \n    # Parse third line: colors of M plates\n    target_colors = []\n    for i in range(1 + N, 1 + N + M):\n        target_colors.append(data[i])\n    \n    # Parse fourth line: values of colors\n    values = list(map(int, data[-M:]))\n    \n    # Create dictionary mapping color to value\n    color_to_value = {}\n    for i in range(M):\n        color_to_value[target_colors[i]] = values[i]\n    \n    # Calculate total cost\n    total_cost = 0\n    for color in colors:\n        if color in color_to_value:\n            total_cost += color_to_value[color]\n    \n    print(total_cost)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc309_a",
+    "code_list": [
+      "def main():\n    A, B = map(int, input().split())\n    \n    # Check adjacency horizontally: same row, different column\n    if (A // 3 == B // 3) and (abs(A - B) == 1):\n        print(\"Yes\")\n    else:\n        print(\"No\")\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc309_b",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().splitlines()\n    \n    n = int(data[0])\n    grid = []\n    for i in range(1, 1 + n):\n        grid.append(data[i].strip())\n    \n    # Create new grid to store shifted values\n    result = [[0] * n for _ in range(n)]\n    \n    # Process first row\n    for j in range(n):\n        if j == 0:\n            result[n-1][n-1] = grid[0][0]\n        elif j == n - 1:\n            result[n-1][0] = grid[0][j]\n        else:\n            result[n-1][j] = grid[0][j-1]\n    \n    # Process last row\n    for j in range(n):\n        if j == 0:\n            result[0][0] = grid[n-1][0]\n        elif j == n - 1:\n            result[0][n-1] = grid[n-1][j]\n        else:\n            result[0][j] = grid[n-1][j+1]\n    \n    # Process columns\n    for i in range(1, n):\n        for j in range(n):\n            if j == 0:\n                result[i-1][n-1] = grid[i][0]\n            elif j == n - 1:\n                result[i-1][0] = grid[i][j]\n            else:\n                result[i-1][j] = grid[i][j-1]\n    \n    # Write result to output\n    for i in range(n):\n        print(''.join(map(str, result[i])))\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc310_a",
+    "code_list": [
+      "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    n = int(data[0])\n    p = int(data[1])\n    q = int(data[2])\n    \n    dishes = list(map(int, data[3:3+n]))\n    \n    min_cost = float('inf')\n    \n    # Try using coupon on each dish\n    for d in dishes:\n        cost_with_coupon = max(0, d - q) + p\n        if cost_with_coupon < min_cost:\n            min_cost = cost_with_coupon\n            \n    print(min_cost)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc310_b",
+    "code_list": [
+      "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    n = int(data[0])\n    m = int(data[1])\n    \n    products = []\n    index = 2\n    for i in range(n):\n        p = int(data[index]); index += 1\n        c = int(data[index]); index += 1\n        \n        # Parse functions: convert string to set of integers\n        functions = set()\n        for j in range(c):\n            f = int(data[index]); index += 1\n            functions.add(f)\n        \n        products.append((p, c, functions))\n    \n    # Sort by price\n    products.sort(key=lambda x: x[0])\n    \n    # Check each pair (i, j) where i > j\n    for i in range(n):\n        for j in range(i):\n            if products[j][0] < products[i][0]:\n                # Check if j's functions are a subset of i's\n                if products[j][2].issubset(products[i][2]):\n                    print(\"Yes\")\n                    return\n    \n    print(\"No\")\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc311_a",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().splitlines()\n    n = int(data[0])\n    s = data[1].strip()\n    \n    count_A = 0\n    count_B = 0\n    count_C = 0\n    \n    for char in s:\n        if char == 'A':\n            count_A += 1\n        elif char == 'B':\n            count_B += 1\n        else:  # char == 'C'\n            count_C += 1\n            \n        if count_A >= 1 and count_B >= 1 and count_C >= 1:\n            print(n)\n            return\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc311_b",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().splitlines()\n    \n    n, d = map(int, data[0].split())\n    schedules = []\n    for i in range(1, 1 + n):\n        schedules.append(data[i])\n    \n    max_count = 0\n    \n    for start in range(n):\n        count = 0\n        for end in range(start, start + n):\n            valid = True\n            for i in range(d):\n                if schedules[end % n][i] == 'x':\n                    valid = False\n                    break\n            if valid:\n                count += 1\n            else:\n                break\n        \n        if count > max_count:\n            max_count = count\n    \n    print(max_count)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc312_a",
+    "code_list": [
+      "def main():\n    S = input().strip()\n    \n    # Check all possible combinations using bitwise operations\n    # We use masks to represent the positions: 0 for A, 1 for B, 2 for C\n    masks = [0b001, 0b010, 0b100]  # Corresponding to 'ACE', 'BDF', 'CEG'\n    \n    for mask in masks:\n        if (mask & 0b001) == (ord(S[0]) - ord('A')) and \\\n           (mask & 0b010) == (ord(S[1]) - ord('A')) and \\\n           (mask & 0b100) == (ord(S[2]) - ord('A')):\n            print(\"Yes\")\n            return\n    \n    print(\"No\")\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc312_b",
+    "code_list": [
+      "import sys\n\ndef main():\n    data = sys.stdin.read().splitlines()\n    n, m = map(int, data[0].split())\n    grid = []\n    for i in range(1, n + 1):\n        grid.append(data[i])\n    \n    # Precompute masks for each position\n    masks = [[0] * m for _ in range(n)]\n    for i in range(n):\n        for j in range(m):\n            if grid[i][j] == '#':\n                masks[i][j] = 1 << (n - 1 - i)\n            else:\n                masks[i][j] = 0\n    \n    # Check for first TaK Code\n    valid = True\n    for i in range(n):\n        for j in range(m):\n            if (masks[i][j] & (masks[i][j + 1] | masks[i + 1][j] | masks[i + 1][j + 1])) != 0:\n                valid = False\n                break\n        if not valid:\n            break\n    \n    if not valid:\n        # Try other positions\n        for i in range(n - 1):\n            for j in range(m - 1):\n                if (masks[i][j] & (masks[i][j + 1] | masks[i + 1][j] | masks[i + 1][j + 1])) != 0:\n                    continue\n                \n                # Check if we can form a second TaK Code starting here\n                for k in range(i, n):\n                    for l in range(j, m):\n                        if (masks[k][l] & (masks[k][l + 1] | masks[k + 1][l] | masks[k + 1][l + 1])) != 0:\n                            continue\n                \n                        # Check if we have enough space for another TaK Code\n                        if (k - i + 1 >= 6 and l - j + 1 >= 6) and \\\n                           (n - (k + 1)) >= 6 and (m - (l + 1)) >= 6:\n                            # Construct the full grid\n                            full_grid = [[''] * m for _ in range(n)]\n                            for x in range(n):\n                                for y in range(m):\n                                    full_grid[x][y] = grid[x][y]\n                            \n                            # Verify both TaK Codes\n                            valid2 = True\n                            for i2 in range(n):\n                                for j2 in range(m):\n                                    if (full_grid[i2][j2] == '#' and \n                                        (full_grid[i2][j2 + 1] | full_grid[i2 + 1][j2] | full_grid[i2 + 1][j2 + 1])) != 0:\n                                        valid2 = False\n                                        break\n                                if not valid2:\n                                    break\n                            if not valid2:\n                                continue\n                            \n                            for i2 in range(n - 1, -1, -1):\n                                for j2 in range(m - 1, -1, -1):\n                                    if (full_grid[i2][j2] == '#' and \n                                        (full_grid[i2][j2 + 1] | full_grid[i2 + 1][j2] | full_grid[i2 + 1][j2 + 1])) != 0:\n                                        continue\n                                    \n                                    # Check if we can form a third TaK Code ending here\n                                    for k2 in range(i2, -1, -1):\n                                        for l2 in range(j2, -1, -1):\n                                            if (full_grid[k2][l2] == '#' and \n                                                (full_grid[k2][l2 + 1] | full_grid[k2 + 1][l2] | full_grid[k2 + 1][l2 + 1])) != 0:\n                                                continue\n                                    \n                                            # Check if we have enough space for another TaK Code\n                                            if (k2 - i2 + 1 >= 6 and l2 - j2 + 1 >= 6) and \\\n                                               (n - (k2 + 1)) >= 6 and (m - (l2 + 1)) >= 6:\n                                                # We found a solution\n                                                print(f\"{i2+1} {j2+1}\")\n                                                return\n    \n    # No solution found\n    print()\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc313_a",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().split()\n    n = int(data[0])\n    p_list = list(map(int, data[1:1+n]))\n    \n    min_p = min(p_list)\n    result = max(0, min_p - p_list[0])\n    print(result)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc314_a",
+    "code_list": [
+      "def main():\n    N = int(input().strip())\n    \n    # Extract digits up to N+1 (since indexing starts at 0)\n    digits = [str(i) for i in range(1, N + 2)]\n    \n    # Join all digits into a string\n    result_str = ''.join(digits)\n    \n    # Remove trailing zeros\n    while len(result_str) > 1 and result_str[-1] == '0':\n        result_str = result_str[:-1]\n    \n    # Add decimal point if necessary\n    if len(result_str) > 0 and result_str[0] != '.':\n        result_str = '.' + result_str\n    \n    print(result_str)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc314_b",
+    "code_list": [
+      "import sys\n\ndef main():\n    data = sys.stdin.read().split()\n    n = int(data[0])\n    index = 1\n    \n    # Process each person's bets\n    for _ in range(n):\n        c = int(data[index]); index += 1\n        bets = []\n        for i in range(c):\n            bets.append(int(data[index])); index += 1\n        \n        # Find all indices where this person bets on 0\n        zero_indices = [i+1 for i, val in enumerate(bets) if val == 0]\n        \n        # If no 0s found, skip this person\n        if not zero_indices:\n            continue\n            \n        # Check if this person has fewer than any other person with 0s\n        min_bets = float('inf')\n        for idx in zero_indices:\n            if len(zero_indices) > 1 and idx < min_bets:\n                break\n            if len(zero_indices) == 1 or idx <= min_bets:\n                min_bets = idx\n                \n    # Output result\n    if min_bets == float('inf'):\n        print(0)\n    else:\n        print(min_bets)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc315_b",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().split()\n    M = int(data[0])\n    D_list = list(map(int, data[1:1+M]))\n    \n    total_days = sum(D_list)\n    half_index = (total_days + 1) // 2\n    \n    current_sum = 0\n    for i in range(M):\n        current_sum += D_list[i]\n        if current_sum >= half_index:\n            result_month = i + 1\n            result_day = half_index - (current_sum - D_list[i])\n            print(f\"{result_month} {result_day}\")\n            return\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc315_a",
+    "code_list": [
+      "def main():\n    S = input().strip()\n    result = ''.join([char for char in S if char not in 'aeiou'])\n    print(result)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc318_b",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().split()\n    \n    n = int(data[0])\n    total_area = 0\n    \n    for i in range(n):\n        A = int(data[2*i+1])\n        B = int(data[2*i+2])\n        C = int(data[2*i+3])\n        D = int(data[2*i+4])\n        \n        width = min(B, 100) - max(A, 0)\n        height = min(D, 100) - max(C, 0)\n        \n        if width > 0 and height > 0:\n            total_area += width * height\n            \n    print(total_area)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc318_a",
+    "code_list": [
+      "import math\n\ndef main():\n    import sys\n    data = sys.stdin.read().split()\n    N = int(data[0])\n    M = int(data[1])\n    P = int(data[2])\n    \n    # Calculate smallest multiple >= M\n    k = (M - 1) // P + 1\n    smallest_multiple = k * P\n    \n    # Count multiples of P up to N\n    count = (N - smallest_multiple) // P\n    \n    print(count)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc319_b",
+    "code_list": [
+      "def main():\n    N = int(input().strip())\n    \n    # Create result list with initial '-' characters\n    result = ['-'] * (N + 1)\n    \n    # Iterate through all possible digits 1-9\n    for d in range(1, 10):\n        # Check if this digit can be used at least once\n        if d > N:\n            continue\n            \n        # Find the first multiple of d that is <= N\n        k = 1\n        while True:\n            multiple = k * d\n            if multiple > N:\n                break\n                \n            # Position in result array: index = multiple - 1\n            pos = multiple - 1\n            if result[pos] == '-':\n                result[pos] = str(d)\n                break\n                \n            k += 1\n    \n    # Join the list into a string and print\n    print(''.join(result))\n\nif __name__ == '__main__':\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc320_b",
+    "code_list": [
+      "def main():\n    s = input().strip()\n    \n    n = len(s)\n    max_length = 1\n    \n    # Check for odd-length palindromes centered at each position\n    for i in range(n):\n        left = i\n        right = i\n        \n        while left >= 0 and right < n and s[left] == s[right]:\n            current_length = right - left + 1\n            if current_length > max_length:\n                max_length = current_length\n            left -= 1\n            right += 1\n    \n    # Check for even-length palindromes centered between each pair of characters\n    for i in range(n - 1):\n        left = i\n        right = i + 1\n        \n        while left >= 0 and right < n and s[left] == s[right]:\n            current_length = right - left + 1\n            if current_length > max_length:\n                max_length = current_length\n            left -= 1\n            right += 1\n    \n    print(max_length)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc320_a",
+    "code_list": [
+      "def main():\n    A, B = map(int, input().split())\n    \n    # Calculate A^B using exponentiation by squaring\n    result_A = 1\n    current = A\n    \n    while B > 0:\n        if B % 2 == 1:  # Odd power\n            result_A *= current\n            \n        current *= current\n        B //= 2\n        \n    # Calculate B^A using exponentiation by squaring\n    result_B = 1\n    current = B\n    \n    while B > 0:\n        if B % 2 == 1:  # Odd power\n            result_B *= current\n            \n        current *= current\n        B //= 2\n        \n    print(result_A + result_B)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc321_b",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().split()\n    \n    n = int(data[0])\n    x = int(data[1])\n    \n    scores = list(map(int, data[2:2+n-1]))\n    total = sum(scores)\n    \n    # Sort the scores while keeping track of original indices\n    sorted_scores = sorted((score, idx) for idx, score in enumerate(scores))\n    \n    # Calculate prefix sums\n    prefix = [0] * (n + 1)\n    for i in range(1, n + 1):\n        prefix[i] = prefix[i-1] + sorted_scores[i-1][0]\n    \n    # Find the k-th largest element using binary search\n    def find_kth_largest(k):\n        low, high = 0, n - 1\n        \n        while low <= high:\n            mid = (low + high) // 2\n            \n            # Count elements less than or equal to sorted_scores[mid][0]\n            count = 0\n            for i in range(n):\n                if sorted_scores[i][0] <= sorted_scores[mid][0]:\n                    count += 1\n            \n            if count >= k:\n                high = mid - 1\n            else:\n                low = mid + 1\n        \n        return sorted_scores[low][0]\n    \n    # Find the smallest score s such that sum(s, ..., s) >= x\n    left = 0\n    right = 100\n    \n    while left <= right:\n        mid = (left + right) // 2\n        required_sum = x - prefix[n - 1]\n        \n        if required_sum > total - mid:\n            left = mid + 1\n        elif required_sum < total - mid:\n            right = mid - 1\n        else:\n            result = find_kth_largest(n - 2)\n            if result == mid:\n                break\n            else:\n                left = mid + 1\n    \n    if left > 100:\n        print(-1)\n    else:\n        print(left)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc321_a",
+    "code_list": [
+      "def main():\n    n = int(input().strip())\n    \n    # Convert number to string to easily access each digit\n    s = str(n)\n    \n    # Check if length is at least 2\n    if len(s) < 2:\n        print(\"Yes\")\n        return\n    \n    # Compare adjacent digits\n    for i in range(len(s) - 1):\n        if s[i] >= s[i + 1]:\n            print(\"No\")\n            return\n    \n    # If all conditions satisfied, it's 321-like\n    print(\"Yes\")\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc322_a",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().splitlines()\n    N = int(data[0])\n    S = data[1].strip()\n    \n    for i in range(N - 2):\n        if S[i:i+3] == 'ABC':\n            print(i + 1)\n            return\n    \n    print(-1)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc322_b",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().splitlines()\n    if not data:\n        return\n    \n    N, M = map(int, data[0].split())\n    S = data[1]\n    T = data[2]\n    \n    if S == T[:N]:\n        if S == T[-N:]:\n            print(0)\n        else:\n            print(1)\n    elif S == T[-N:]:\n        print(2)\n    else:\n        print(3)\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc323_b",
+    "code_list": [
+      "def main():\n    import sys\n    data = sys.stdin.read().splitlines()\n    n = int(data[0])\n    s_list = data[1:1+n]\n    \n    # Initialize count array for each player\n    count = [0] * (n + 1)\n    \n    # Process each match result\n    for i in range(n):\n        for j in range(n):\n            if s_list[i][j] == 'o':\n                count[j] += 1\n            elif s_list[i][j] == 'x':\n                count[i] += 1\n    \n    # Sort by count in descending order, then by player index in ascending order\n    sorted_indices = sorted(range(1, n + 1), key=lambda k: (-count[k], k))\n    \n    # Output the sorted indices\n    print(' '.join(map(str, sorted_indices)))\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc323_a",
+    "code_list": [
+      "def main():\n    S = input().strip()\n    \n    # Check if all characters at even positions (index 1 to 15) are '0'\n    valid = True\n    for i in range(1, 16, 2):\n        if S[i] != '0':\n            valid = False\n            break\n    \n    if valid:\n        print(\"Yes\")\n    else:\n        print(\"No\")\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc324_a",
+    "code_list": [
+      "def main():\n    n = int(input().strip())\n    first = int(input().strip())\n    \n    for i in range(1, n):\n        if int(input().strip()) != first:\n            print(\"No\")\n            return\n    \n    print(\"Yes\")\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  },
+  {
+    "question_id": "abc324_b",
+    "code_list": [
+      "import math\n\ndef main():\n    n = int(input().strip())\n    \n    # Factorize into prime factors\n    factors = {}\n    temp = n\n    \n    # Handle factor of 2\n    while temp % 2 == 0:\n        factors[2] = factors.get(2, 0) + 1\n        temp //= 2\n    \n    # Handle odd factors\n    for i in range(3, int(math.sqrt(temp)) + 1, 2):\n        while temp % i == 0:\n            factors[i] = factors.get(i, 0) + 1\n            temp //= i\n    \n    # If remaining > 2, it's not divisible by anything larger than itself\n    if temp > 2:\n        factors[temp] = factors.get(temp, 0) + 1\n    \n    # Check conditions\n    if all(count >= 1 for count in factors.values()):\n        print(\"Yes\")\n    else:\n        print(\"No\")\n\nif __name__ == \"__main__\":\n    main()"
+    ]
+  }
+]

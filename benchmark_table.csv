@@ -1,0 +1,3 @@
+Model,En İyi Checkpoint,Pass@1 (%),Çözülen Soru
+deep_instruction,Step-100 / 600 / 700,%26.83,11 / 41
+diverse_instruction,Step-300,%24.39,10 / 41

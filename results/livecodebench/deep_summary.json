@@ -1,0 +1,161 @@
+{
+  "timestamp": "2025-12-21T23:22:51.590093",
+  "config": {
+    "base_model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "livecodebench_version": "release_v5",
+    "date_range": "2408-2502",
+    "platform": "atcoder",
+    "difficulty": "easy",
+    "model_types": [
+      "deep_instruction"
+    ],
+    "steps": null,
+    "num_problems": 41
+  },
+  "results": [
+    {
+      "model_name": "deep_instruction_checkpoint-step-100-epoch-1",
+      "model_type": "deep_instruction",
+      "checkpoint_path": "models/deep_instruction/checkpoints/checkpoint-step-100-epoch-1",
+      "difficulty": "2408-2502_atcoder",
+      "num_problems": 41,
+      "timestamp": "2025-12-21T22:15:13.598786",
+      "stats": {
+        "total": 41,
+        "passed": 11,
+        "failed": 30,
+        "error": 0,
+        "no_tests": 0,
+        "pass_at_1": 0.2682926829268293
+      },
+      "pass_at_1": 0.2682926829268293,
+      "detailed_log": "results/livecodebench/detailed/deep_instruction_checkpoint-step-100-epoch-1_2408-2502_atcoder.jsonl"
+    },
+    {
+      "model_name": "deep_instruction_checkpoint-step-200-epoch-1",
+      "model_type": "deep_instruction",
+      "checkpoint_path": "models/deep_instruction/checkpoints/checkpoint-step-200-epoch-1",
+      "difficulty": "2408-2502_atcoder",
+      "num_problems": 41,
+      "timestamp": "2025-12-21T22:23:27.091582",
+      "stats": {
+        "total": 41,
+        "passed": 11,
+        "failed": 30,
+        "error": 0,
+        "no_tests": 0,
+        "pass_at_1": 0.2682926829268293
+      },
+      "pass_at_1": 0.2682926829268293,
+      "detailed_log": "results/livecodebench/detailed/deep_instruction_checkpoint-step-200-epoch-1_2408-2502_atcoder.jsonl"
+    },
+    {
+      "model_name": "deep_instruction_checkpoint-step-300-epoch-2",
+      "model_type": "deep_instruction",
+      "checkpoint_path": "models/deep_instruction/checkpoints/checkpoint-step-300-epoch-2",
+      "difficulty": "2408-2502_atcoder",
+      "num_problems": 41,
+      "timestamp": "2025-12-21T22:33:03.299975",
+      "stats": {
+        "total": 41,
+        "passed": 10,
+        "failed": 31,
+        "error": 0,
+        "no_tests": 0,
+        "pass_at_1": 0.24390243902439024
+      },
+      "pass_at_1": 0.24390243902439024,
+      "detailed_log": "results/livecodebench/detailed/deep_instruction_checkpoint-step-300-epoch-2_2408-2502_atcoder.jsonl"
+    },
+    {
+      "model_name": "deep_instruction_checkpoint-step-400-epoch-2",
+      "model_type": "deep_instruction",
+      "checkpoint_path": "models/deep_instruction/checkpoints/checkpoint-step-400-epoch-2",
+      "difficulty": "2408-2502_atcoder",
+      "num_problems": 41,
+      "timestamp": "2025-12-21T22:42:36.026885",
+      "stats": {
+        "total": 41,
+        "passed": 9,
+        "failed": 32,
+        "error": 0,
+        "no_tests": 0,
+        "pass_at_1": 0.21951219512195122
+      },
+      "pass_at_1": 0.21951219512195122,
+      "detailed_log": "results/livecodebench/detailed/deep_instruction_checkpoint-step-400-epoch-2_2408-2502_atcoder.jsonl"
+    },
+    {
+      "model_name": "deep_instruction_checkpoint-step-500-epoch-3",
+      "model_type": "deep_instruction",
+      "checkpoint_path": "models/deep_instruction/checkpoints/checkpoint-step-500-epoch-3",
+      "difficulty": "2408-2502_atcoder",
+      "num_problems": 41,
+      "timestamp": "2025-12-21T22:52:33.664680",
+      "stats": {
+        "total": 41,
+        "passed": 9,
+        "failed": 32,
+        "error": 0,
+        "no_tests": 0,
+        "pass_at_1": 0.21951219512195122
+      },
+      "pass_at_1": 0.21951219512195122,
+      "detailed_log": "results/livecodebench/detailed/deep_instruction_checkpoint-step-500-epoch-3_2408-2502_atcoder.jsonl"
+    },
+    {
+      "model_name": "deep_instruction_checkpoint-step-600-epoch-3",
+      "model_type": "deep_instruction",
+      "checkpoint_path": "models/deep_instruction/checkpoints/checkpoint-step-600-epoch-3",
+      "difficulty": "2408-2502_atcoder",
+      "num_problems": 41,
+      "timestamp": "2025-12-21T23:01:54.390129",
+      "stats": {
+        "total": 41,
+        "passed": 11,
+        "failed": 30,
+        "error": 0,
+        "no_tests": 0,
+        "pass_at_1": 0.2682926829268293
+      },
+      "pass_at_1": 0.2682926829268293,
+      "detailed_log": "results/livecodebench/detailed/deep_instruction_checkpoint-step-600-epoch-3_2408-2502_atcoder.jsonl"
+    },
+    {
+      "model_name": "deep_instruction_checkpoint-step-700-epoch-3",
+      "model_type": "deep_instruction",
+      "checkpoint_path": "models/deep_instruction/checkpoints/checkpoint-step-700-epoch-3",
+      "difficulty": "2408-2502_atcoder",
+      "num_problems": 41,
+      "timestamp": "2025-12-21T23:12:30.793874",
+      "stats": {
+        "total": 41,
+        "passed": 11,
+        "failed": 30,
+        "error": 0,
+        "no_tests": 0,
+        "pass_at_1": 0.2682926829268293
+      },
+      "pass_at_1": 0.2682926829268293,
+      "detailed_log": "results/livecodebench/detailed/deep_instruction_checkpoint-step-700-epoch-3_2408-2502_atcoder.jsonl"
+    },
+    {
+      "model_name": "deep_instruction_checkpoint-step-750-epoch-4",
+      "model_type": "deep_instruction",
+      "checkpoint_path": "models/deep_instruction/checkpoints/checkpoint-step-750-epoch-4",
+      "difficulty": "2408-2502_atcoder",
+      "num_problems": 41,
+      "timestamp": "2025-12-21T23:22:51.589406",
+      "stats": {
+        "total": 41,
+        "passed": 10,
+        "failed": 31,
+        "error": 0,
+        "no_tests": 0,
+        "pass_at_1": 0.24390243902439024
+      },
+      "pass_at_1": 0.24390243902439024,
+      "detailed_log": "results/livecodebench/detailed/deep_instruction_checkpoint-step-750-epoch-4_2408-2502_atcoder.jsonl"
+    }
+  ]
+}
