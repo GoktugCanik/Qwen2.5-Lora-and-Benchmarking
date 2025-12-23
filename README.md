@@ -56,7 +56,7 @@ Performance Summary
 
 Model,Best Checkpoint,Pass@1 (%),Problems Solved
 
-Deep_Instruction,Step-100 / 600 / 700,26.83,11 / 41
+Deep_Instruction,Step-100 / 200 / 600 / 700,26.83,11 / 41
 
 Diverse_Instruction,Step-300,24.39,10 / 41
 
