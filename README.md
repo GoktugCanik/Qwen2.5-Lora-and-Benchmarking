@@ -58,4 +58,31 @@ Model,Best Checkpoint,Pass@1 (%),Problems Solved
 
 Deep_Instruction,Step-100 / 600 / 700,26.83,11 / 41
 
+# Comparison Report: Deep (Step 600) vs Diverse (Step 300)
+
+## Common Solved Questions
+
+- abc302_a
+- abc315_a
+- abc320_b
+- abc322_a
+
+## Questions Solved ONLY by Deep (Step 600)
+
+- abc305_a
+- abc307_a
+- abc319_b
+- abc322_b
+- abc323_a
+- abc323_b
+- abc324_a
+
+## Questions Solved ONLY by Diverse (Step 300)
+
+- abc306_b
+- abc307_b
+- abc308_a
+- abc311_a
+- abc312_a
+- abc324_b
 Diverse_Instruction,Step-300,24.39,10 / 41
